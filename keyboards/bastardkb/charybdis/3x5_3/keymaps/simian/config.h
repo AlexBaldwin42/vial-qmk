@@ -53,7 +53,10 @@
 
 #    define TAPPING_FORCE_HOLD
 #    define TAPPING_TERM 140
-#    define TAPPING_TERM_PER_KEY
+#    ifndef TAPPING_TERM_PER_KEY
+#    		define TAPPING_TERM_PER_KEY
+#    endif
+
 #    define IGNORE_MOD_TAP_INTERRUPT
 #endif // TAPPING_TERM
 
