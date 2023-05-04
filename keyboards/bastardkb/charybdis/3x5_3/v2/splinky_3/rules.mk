@@ -1,15 +1,18 @@
 # MCU name
-MCU = STM32F411
-BOARD = BLACKPILL_STM32_F411
+MCU = RP2040
 
 # Bootloader selection
-BOOTLOADER = stm32-dfu
+BOOTLOADER = rp2040
+
+# RP2040-specific options
+ALLOW_WARNINGS = yes
+PICO_INTRINSICS_ENABLED = no # ATM Unsupported by ChibiOS.
 
 # Build Options
 #   change yes to no to disable
 #
 BOOTMAGIC_ENABLE = yes      # Enable Bootmagic Lite
-MOUSEKEY_ENABLE = yes       # Mouse keys
+MOUSEKEY_ENABLE = no        # Mouse keys
 EXTRAKEY_ENABLE = yes       # Audio control and System control
 CONSOLE_ENABLE = no         # Console for debug
 COMMAND_ENABLE = no         # Commands for debug and configuration
@@ -29,11 +32,6 @@ LAYOUTS = split_3x5_3
 
 POINTING_DEVICE_ENABLE = yes # Enable trackball
 POINTING_DEVICE_DRIVER = pmw3360
-MOUSE_SHARED_EP = no # Unify multiple HID interfaces into a single Endpoint
-KEYBOARD_SHARED_EP = yes
 
-EEPROM_DRIVER = spi
-WS2812_DRIVER = pwm
-SERIAL_DRIVER = usart
-
-DEBOUNCE_TYPE = asym_eager_defer_pk
+SERIAL_DRIVER = vendor
+WS2812_DRIVER = vendor

@@ -1,5 +1,4 @@
-/**
- * Copyright 2020 Nick Brassel (tzarc)
+/*
  * Copyright 2021 Charly Delay <charly@codesink.dev> (@0xcharly)
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,10 +17,16 @@
 
 #pragma once
 
-#define HAL_USE_PWM TRUE
-#define HAL_USE_SERIAL TRUE
-#define HAL_USE_SPI TRUE
-#define SPI_USE_WAIT TRUE
-#define SPI_SELECT_MODE SPI_SELECT_MODE_PAD
+#include_next <mcuconf.h>
 
-#include_next "halconf.h"
+#undef STM32_SPI_USE_SPI1
+#define STM32_SPI_USE_SPI1 TRUE
+
+#undef STM32_SERIAL_USE_USART1
+#define STM32_SERIAL_USE_USART1 FALSE
+
+#undef STM32_PWM_USE_TIM2
+#define STM32_PWM_USE_TIM2 TRUE
+
+#undef STM32_ST_USE_TIMER
+#define STM32_ST_USE_TIMER 5

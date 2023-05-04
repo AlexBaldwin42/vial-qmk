@@ -77,19 +77,18 @@ static uint16_t auto_pointer_layer_timer = 0;
 #define CTL_EQL RCTL_T(KC_EQL)
 
 // Combos
-enum combos{
-  DF_DQT,
-//AS_QT
-  SD_QT
-};
+//enum combos{
+// DF_DQT,
+ // SD_QT
+//};
 
-const uint16_t PROGMEM df_combo[] = {LSFT_T(KC_D), LCTL_T(KC_F), COMBO_END};
-const uint16_t PROGMEM sd_combo[] = {LALT_T(KC_S), LSFT_T(KC_D),  COMBO_END};
+//const uint16_t PROGMEM df_combo[] = {LSFT_T(KC_D), LCTL_T(KC_F), COMBO_END};
+//const uint16_t PROGMEM sd_combo[] = {LALT_T(KC_S), LSFT_T(KC_D),  COMBO_END};
 
-combo_t key_combos[COMBO_COUNT] = {
-  [DF_DQT] = COMBO(df_combo, KC_DQT),
-  [SD_QT] = COMBO(sd_combo, KC_QUOT)
-};
+//combo_t key_combos[VIAL_COMBO_COUNT] = {
+//  [DF_DQT] = COMBO(df_combo, KC_DQT),
+//  [SD_QT] = COMBO(sd_combo, KC_QUOT)
+//};
 
 #ifndef POINTING_DEVICE_ENABLE
 #    define DRGSCRL KC_NO
@@ -214,8 +213,8 @@ void rgb_matrix_indicators_user(void) {
         HSV hsv1 = {HSV_TEAL};
         hsv = hsv1;
     }else if (IS_LAYER_ON(LAYER_ADJUST)) {
-        //HSV hsv1 = {HSV_PINK};
-        //hsv = hsv1;
+        HSV hsv1 = {HSV_PINK};
+        hsv = hsv1;
     }
     if(!(hsv.v == 0 && hsv.s == 0 && hsv.v == 0)){
         if (hsv.v > rgb_matrix_get_val()) {
@@ -231,7 +230,7 @@ void rgb_matrix_indicators_user(void) {
 
 #ifdef TAPPING_TERM_PER_KEY
 
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+uint16_t get_tapping_term_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LGUI_T(KC_A):
         case RGUI_T(KC_SCLN):

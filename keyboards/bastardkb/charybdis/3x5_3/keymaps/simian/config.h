@@ -19,10 +19,21 @@
 #ifdef VIA_ENABLE
 /* VIA configuration. */
 #    define DYNAMIC_KEYMAP_LAYER_COUNT 7
+#    ifdef VIAL_ENABLE 
+#        define VIAL_KEYBOARD_UID \
+          { 0x44, 0x9f,  0x26, 0x53, 0xD9, 0x7B, 0x72,  0x4F }
+#        define  VIAL_UNLOCK_COMBO_ROWS \
+            { 0, 4 }
+#        define VIAL_UNLOCK_COMBO_COLS \
+            { 0, 0 }
+#    endif // VIAL_ENABLE
 #endif // VIA_ENABLE
 
 /* Disable unused features. */
 #define NO_ACTION_ONESHOT
+
+
+#undef MASTER_RIGHT
 
 /**
  * \brief Configure the global tapping term (default: 200ms).
@@ -32,7 +43,10 @@
  * See docs.qmk.fm/using-qmk/software-features/tap_hold#tapping-term
  */
 
-#    define COMBO_COUNT 2
+//#    define VIAL_COMBO_COUNT 2
+//#    define VIAL_COMBO_COUNT 2
+//#undef VIAL_COMBO_ENABLE
+//#define COMBO_ENABLE
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
 #define POINTER_LAYER_TIMEOUT_MS 1500
 #ifndef TAPPING_TERM
@@ -44,8 +58,10 @@
 #endif // TAPPING_TERM
 
 /* Charybdis-specific features. */
+#define CHARYBDIS_CONFIG_SYNC
 
 #ifdef POINTING_DEVICE_ENABLE
+#    define POINTING_DEVICE_RIGHT
 // Automatically enable the pointer layer when moving the trackball.  See also:
 // - `CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_TIMEOUT_MS`
 // - `CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD`
@@ -54,7 +70,7 @@
 #    undef POINTING_DEVICE_INVERT_X
 #    define POINTING_DEVICE_INVERT_Y
 #    define CHARYBDIS_DRAGSCROLL_REVERSE_Y
-#    define CHARYBDIS_MINIMUM_DEFAULT_DPI 650
+#    define CHARYBDIS_MINIMUM_DEFAULT_DPI 1000
 #    define CHARYBDIS_DEFAULT_DPI_CONFIG_STEP 50
 #    ifndef CHARYBDIS_MINIMUM_SNIPING_DPI
 #        define CHARYBDIS_MINIMUM_SNIPING_DPI 200
@@ -80,8 +96,8 @@
 #ifdef RGB_MATRIX_ENABLE
 // Limit maximum brightness to keep power consumption reasonable, and avoid
 // disconnects.
-#    undef RGB_MATRIX_MAXIMUM_BRIGHTNESS
-#    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 100
+//#    undef RGB_MATRIX_MAXIMUM_BRIGHTNESS
+//#    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 100
 
 // Rainbow swirl as startup mode.
 #    define ENABLE_RGB_MATRIX_CYCLE_LEFT_RIGHT
@@ -93,7 +109,7 @@
 // Startup values.
 #    define RGB_MATRIX_STARTUP_HUE 0
 #    define RGB_MATRIX_STARTUP_SAT 255
-#    define RGB_MATRIX_STARTUP_VAL RGB_MATRIX_MAXIMUM_BRIGHTNESS
+//#    define RGB_MATRIX_STARTUP_VAL RGB_MATRIX_MAXIMUM_BRIGHTNESS
 #    define RGB_MATRIX_STARTUP_HSV RGB_MATRIX_STARTUP_HUE, RGB_MATRIX_STARTUP_SAT, RGB_MATRIX_STARTUP_VAL
 #    define RGB_MATRIX_KEYREACTIVE_ENABLED
 #    define ENABLE_RGB_MATRIX_SOLID_REACTIVE_CROSS
@@ -131,4 +147,5 @@
 #    define ENABLE_RGB_MATRIX_SOLID_SPLASH
 #    define ENABLE_RGB_MATRIX_SOLID_MULTISPLASH
 #    define RGB_MATRIX_STARTUP_HSV RGB_MATRIX_STARTUP_HUE, RGB_MATRIX_STARTUP_SAT, RGB_MATRIX_STARTUP_VAL
+#    define SPLIT_LAYER_STATE_ENABLE
 #endif // RGB_MATRIX_ENABLE
