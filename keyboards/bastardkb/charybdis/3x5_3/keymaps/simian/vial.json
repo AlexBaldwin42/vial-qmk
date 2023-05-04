@@ -9,42 +9,42 @@
     "customKeycodes": [
         {
             "title": "Default DPI Increase",
-            "name": "Default DPI Inc",
+            "name": "DPI+",
             "shortName": "DPI+"
         },
         {
             "title": "Default DPI Decrease",
-            "name": "Default DPI Dec",
+            "name": "DPI-",
             "shortName": "DPI-"
         },
         {
             "title": "Sniping DPI Increase",
-            "name": "Sniping DPI Inc",
+            "name": "Snp+",
             "shortName": "Snp+"
         },
         {
             "title": "Sniping DPI Decrease",
-            "name": "Sniping DPI Dec",
+            "name": "Snp-",
             "shortName": "Snp-"
         },
         {
             "title": "Sniping Momentary",
-            "name": "Sniping MO",
+            "name": "SnpMO",
             "shortName": "Snp"
         },
         {
             "title": "Sniping Toggle",
-            "name": "Sniping TO",
+            "name": "SnpTO",
             "shortName": "SnpT"
         },
         {
             "title": "Drag-scroll Momentary",
-            "name": "Drag-scroll MO",
+            "name": "DrgMO",
             "shortName": "Drg"
         },
         {
             "title": "Drag-scroll Toggle",
-            "name": "Drag-scroll TG",
+            "name": "DrgTG",
             "shortName": "DrgT"
         }
     ],
