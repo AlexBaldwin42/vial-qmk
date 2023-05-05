@@ -35,18 +35,6 @@
 
 #undef MASTER_RIGHT
 
-/**
- * \brief Configure the global tapping term (default: 200ms).
- *
- * If you have a lot of accidental mod activations, crank up the tapping term.
- *
- * See docs.qmk.fm/using-qmk/software-features/tap_hold#tapping-term
- */
-
-//#    define VIAL_COMBO_COUNT 2
-//#    define VIAL_COMBO_COUNT 2
-//#undef VIAL_COMBO_ENABLE
-//#define COMBO_ENABLE
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
 #define POINTER_LAYER_TIMEOUT_MS 5500
 #ifndef TAPPING_TERM
@@ -105,6 +93,9 @@
 // Rainbow swirl as startup mode.
 #    define ENABLE_RGB_MATRIX_CYCLE_LEFT_RIGHT
 #    define RGB_MATRIX_STARTUP_MODE RGB_MATRIX_CYCLE_LEFT_RIGHT
+
+#    define RGB_MATRIX_FRAMEBUFFER_EFFECTS
+#    define RGN_MATRIX_KEYPRESSES
 
 // Slow swirl at startup.
 #    define RGB_MATRIX_STARTUP_SPD 32
