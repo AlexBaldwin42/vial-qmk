@@ -18,7 +18,7 @@
 
 #ifdef VIA_ENABLE
 /* VIA configuration. */
-#    define DYNAMIC_KEYMAP_LAYER_COUNT 7
+#    define DYNAMIC_KEYMAP_LAYER_COUNT 16
 #    ifdef VIAL_ENABLE 
 #        define VIAL_KEYBOARD_UID \
           { 0x44, 0x9f,  0x26, 0x53, 0xD9, 0x7B, 0x72,  0x4F }
@@ -78,8 +78,8 @@
 #endif // POINTING_DEVICE_ENABLE
 
 // Industrial encoder
-//#define ENCODER_RESOLUTION 2
-#define ENCODER_RESOLUTION 4
+#define ENCODER_RESOLUTION 2
+//#define ENCODER_RESOLUTION 4
 //#define ENCODER_DIRECTION_FLIP
 
 /* RGB Matrix. */
