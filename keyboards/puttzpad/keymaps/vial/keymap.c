@@ -15,6 +15,14 @@
  */
 #include QMK_KEYBOARD_H
 
+//#if defined(ENCODER_MAP_ENABLE)
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
+    [0] =   { ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN) },
+    [1] =   { ENCODER_CCW_CW(KC_VOLD, KC_VOLU)  },
+    [2] =   { ENCODER_CCW_CW(KC_RIGHT, KC_LEFT) },
+    [3] =   { ENCODER_CCW_CW(RGB_RMOD, RGB_MOD)},
+};
+//#endif
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ortho_5x4( /* Base */
@@ -24,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	KC_P1,   KC_P2,   KC_P3,   KC_EQL,  \
 	KC_P0,   KC_P0,   KC_PDOT, KC_PENT  \
   ),
- [1] = LAYOUT_ortho_5x4( 
+ [1] = LAYOUT_ortho_5x4(
 	_______,   _______,   _______,   _______, \
 	_______,   _______,   _______,   _______, \
 	_______,   _______,   _______,   _______, \

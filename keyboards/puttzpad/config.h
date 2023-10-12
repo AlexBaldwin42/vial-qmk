@@ -23,6 +23,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_ROWS 5
 #define MATRIX_COLS 4
 
+#define ENCODERS_PAD_A { GP2 }
+#define ENCODERS_PAD_B { GP3 }
+#define ENCODER_RESOLUTION 4
+
+
+//#define ENCODERS_PAD_A { GP2 }
+//#define ENCODERS_PAD_B { GP3 }
 /*
  * Keyboard Matrix Assignments
  *

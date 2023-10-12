@@ -1,5 +1,5 @@
 # MCU name
-#MCU = rp2040 
+#MCU = rp2040
 
 # Bootloader selection
 #BOOTLOADER = rp2040
@@ -17,3 +17,4 @@ BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 AUDIO_ENABLE = no           # Audio outpu
 LAYOUTS = ortho_5x4 numpad_5x4
+ENCODER_ENABLE = yes
