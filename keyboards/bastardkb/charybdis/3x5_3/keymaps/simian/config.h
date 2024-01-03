@@ -19,7 +19,7 @@
 #ifdef VIA_ENABLE
 /* VIA configuration. */
 #    define DYNAMIC_KEYMAP_LAYER_COUNT 16
-#    ifdef VIAL_ENABLE 
+#    ifdef VIAL_ENABLE
 #        define VIAL_KEYBOARD_UID \
           { 0x44, 0x9f,  0x26, 0x53, 0xD9, 0x7B, 0x72,  0x4F }
 #        define  VIAL_UNLOCK_COMBO_ROWS \
@@ -39,13 +39,13 @@
 #define POINTER_LAYER_TIMEOUT_MS 5500
 #ifndef TAPPING_TERM
 
-#    define TAPPING_FORCE_HOLD
+//#    define TAPPING_FORCE_HOLD
 #    define TAPPING_TERM 140
 #    ifndef TAPPING_TERM_PER_KEY
 #    		define TAPPING_TERM_PER_KEY
 #    endif
-
-#    define IGNORE_MOD_TAP_INTERRUPT
+#    define PERMISSIVE_HOLD
+//#    define IGNORE_MOD_TAP_INTERRUPT
 #endif // TAPPING_TERM
 
 /* Charybdis-specific features. */

@@ -230,7 +230,7 @@ void rgb_matrix_indicators_user(void) {
 
 #ifdef TAPPING_TERM_PER_KEY
 
-uint16_t get_tapping_term_user(uint16_t keycode, keyrecord_t *record) {
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LGUI_T(KC_A):
         case RGUI_T(KC_SCLN):
